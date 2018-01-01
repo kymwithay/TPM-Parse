@@ -7,21 +7,25 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BBD54FD21FF9EBF700B5487A /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBD54FD11FF9EBF700B5487A /* LoginViewController.swift */; };
 		BBD861FC1FF9E5A900A33873 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBD861FB1FF9E5A900A33873 /* AppDelegate.swift */; };
-		BBD861FE1FF9E5A900A33873 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBD861FD1FF9E5A900A33873 /* ViewController.swift */; };
 		BBD862011FF9E5A900A33873 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BBD861FF1FF9E5A900A33873 /* Main.storyboard */; };
 		BBD862031FF9E5A900A33873 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BBD862021FF9E5A900A33873 /* Assets.xcassets */; };
 		BBD862061FF9E5A900A33873 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BBD862041FF9E5A900A33873 /* LaunchScreen.storyboard */; };
+		C24DCE44F83C473664A7747E /* Pods_TPM_Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 44BAAD01EA0C14473BFA27F7 /* Pods_TPM_Parse.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		02754E262D7043103D46C682 /* Pods-TPM Parse.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TPM Parse.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TPM Parse/Pods-TPM Parse.debug.xcconfig"; sourceTree = "<group>"; };
+		44BAAD01EA0C14473BFA27F7 /* Pods_TPM_Parse.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TPM_Parse.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BBD54FD11FF9EBF700B5487A /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		BBD861F81FF9E5A900A33873 /* TPM Parse.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "TPM Parse.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BBD861FB1FF9E5A900A33873 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		BBD861FD1FF9E5A900A33873 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		BBD862001FF9E5A900A33873 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		BBD862021FF9E5A900A33873 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BBD862051FF9E5A900A33873 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BBD862071FF9E5A900A33873 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C9C4D18DB4CD569029234691 /* Pods-TPM Parse.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TPM Parse.release.xcconfig"; path = "Pods/Target Support Files/Pods-TPM Parse/Pods-TPM Parse.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,17 +33,45 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C24DCE44F83C473664A7747E /* Pods_TPM_Parse.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		26455B82709FA59BFA34E75F /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				02754E262D7043103D46C682 /* Pods-TPM Parse.debug.xcconfig */,
+				C9C4D18DB4CD569029234691 /* Pods-TPM Parse.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		A783F5650CE73184A398F028 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				44BAAD01EA0C14473BFA27F7 /* Pods_TPM_Parse.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		BBD54FD01FF9EBCD00B5487A /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				BBD54FD11FF9EBF700B5487A /* LoginViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
 		BBD861EF1FF9E5A900A33873 = {
 			isa = PBXGroup;
 			children = (
 				BBD861FA1FF9E5A900A33873 /* TPM Parse */,
 				BBD861F91FF9E5A900A33873 /* Products */,
+				26455B82709FA59BFA34E75F /* Pods */,
+				A783F5650CE73184A398F028 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -54,8 +86,8 @@
 		BBD861FA1FF9E5A900A33873 /* TPM Parse */ = {
 			isa = PBXGroup;
 			children = (
+				BBD54FD01FF9EBCD00B5487A /* ViewControllers */,
 				BBD861FB1FF9E5A900A33873 /* AppDelegate.swift */,
-				BBD861FD1FF9E5A900A33873 /* ViewController.swift */,
 				BBD861FF1FF9E5A900A33873 /* Main.storyboard */,
 				BBD862021FF9E5A900A33873 /* Assets.xcassets */,
 				BBD862041FF9E5A900A33873 /* LaunchScreen.storyboard */,
@@ -71,9 +103,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = BBD8620A1FF9E5A900A33873 /* Build configuration list for PBXNativeTarget "TPM Parse" */;
 			buildPhases = (
+				0B973C036FAA54167B470289 /* [CP] Check Pods Manifest.lock */,
 				BBD861F41FF9E5A900A33873 /* Sources */,
 				BBD861F51FF9E5A900A33873 /* Frameworks */,
 				BBD861F61FF9E5A900A33873 /* Resources */,
+				AC86C04F09CFDDCD2F31BB90 /* [CP] Embed Pods Frameworks */,
+				C773868D66A54380128C8C73 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -131,12 +166,68 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		0B973C036FAA54167B470289 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-TPM Parse-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		AC86C04F09CFDDCD2F31BB90 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-TPM Parse/Pods-TPM Parse-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Bolts/Bolts.framework",
+				"${BUILT_PRODUCTS_DIR}/Parse/Parse.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Bolts.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Parse.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TPM Parse/Pods-TPM Parse-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C773868D66A54380128C8C73 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TPM Parse/Pods-TPM Parse-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		BBD861F41FF9E5A900A33873 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BBD861FE1FF9E5A900A33873 /* ViewController.swift in Sources */,
+				BBD54FD21FF9EBF700B5487A /* LoginViewController.swift in Sources */,
 				BBD861FC1FF9E5A900A33873 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -272,6 +363,7 @@
 		};
 		BBD8620B1FF9E5A900A33873 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 02754E262D7043103D46C682 /* Pods-TPM Parse.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -287,6 +379,7 @@
 		};
 		BBD8620C1FF9E5A900A33873 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C9C4D18DB4CD569029234691 /* Pods-TPM Parse.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
