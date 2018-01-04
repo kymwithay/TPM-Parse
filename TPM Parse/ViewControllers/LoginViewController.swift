@@ -102,9 +102,8 @@ class LoginViewController: UIViewController {
     
     
     
-    //////////
     @IBAction func onTapSignUp(_ sender: Any) {
-        print ("Tapped signup")
+        activityIndicator.startAnimating()
         
         let username = usernameTextField.text! as String
         let password = passwordTextField.text! as String
