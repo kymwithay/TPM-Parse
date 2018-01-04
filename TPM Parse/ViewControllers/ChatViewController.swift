@@ -8,15 +8,24 @@
 
 import UIKit
 
-class ChatViewController: UIViewController {
+import Parse
+
+class ChatViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
     @IBOutlet weak var chatMessageTextField: UITextField!
+    @IBOutlet weak var messagesTableView: UITableView!
+    
+    var messages: [PFObject]?
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        messagesTableView.dataSource = self
+        messagesTableView.delegate = self
+        
+        Timer.scheduledTimer(timeInterval: 5, target: self, selector: #selector(self.onTimer), userInfo: nil, repeats: true)
     }
 
     override func didReceiveMemoryWarning() {
@@ -25,8 +34,37 @@ class ChatViewController: UIViewController {
     }
     
     
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if let message = self.messages {
+            return message.count
+        }
+        return 0
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "chatCell", for: indexPath) as! ChatCell
+        cell.messages = (self.messages?[indexPath.row])!
+        return cell
+    }
+    
+    @objc func onTimer() {
+        // Add code to be run periodically
+        print ("fetcning messages")
+    }
+    
     @IBAction func onSendTap(_ sender: Any) {
         print ("chat sending")
+        
+        let chatMessage = PFObject(className: "Message")
+        chatMessage["text"] = chatMessageTextField.text ?? ""
+        
+        chatMessage.saveInBackground { (success, error) in
+            if success {
+                print ("Message was saved")
+            } else if let error = error {
+                print("Problem saving message: \(error.localizedDescription)")
+            }
+        }
     }
     
 
