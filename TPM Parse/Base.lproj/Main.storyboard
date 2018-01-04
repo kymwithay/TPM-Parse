@@ -98,27 +98,38 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ZOh-FA-5ms">
-                                <rect key="frame" x="139" y="233" width="97" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <textField opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Write message here" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ZOh-FA-5ms">
+                                <rect key="frame" x="16" y="80" width="269" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" enablesReturnKeyAutomatically="YES"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TCm-L7-XWV">
-                                <rect key="frame" x="291" y="227" width="46" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TCm-L7-XWV">
+                                <rect key="frame" x="323" y="80" width="36" height="30"/>
+                                <state key="normal" title="Send"/>
+                                <connections>
+                                    <action selector="onSendTap:" destination="XJG-8Y-HCG" eventType="touchUpInside" id="Fte-dc-pjC"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="ZOh-FA-5ms" firstAttribute="leading" secondItem="T4i-sx-pnf" secondAttribute="leading" constant="16" id="35N-sF-i0g"/>
+                            <constraint firstItem="ZOh-FA-5ms" firstAttribute="top" secondItem="T4i-sx-pnf" secondAttribute="top" constant="16" id="IYm-GB-Xb9"/>
+                            <constraint firstItem="TCm-L7-XWV" firstAttribute="top" secondItem="T4i-sx-pnf" secondAttribute="top" constant="16" id="aeq-Ly-QHS"/>
+                            <constraint firstItem="TCm-L7-XWV" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="ZOh-FA-5ms" secondAttribute="trailing" constant="16" id="hjs-cO-2cg"/>
+                            <constraint firstItem="T4i-sx-pnf" firstAttribute="trailing" secondItem="TCm-L7-XWV" secondAttribute="trailing" constant="16" id="v6X-R2-sH8"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="T4i-sx-pnf"/>
                     </view>
                     <navigationItem key="navigationItem" id="6Yb-Av-ksz"/>
+                    <connections>
+                        <outlet property="chatMessageTextField" destination="ZOh-FA-5ms" id="j2y-EK-8cB"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Zog-SA-MrW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1700" y="121"/>
+            <point key="canvasLocation" x="1700" y="120.98950524737631"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Rsc-pE-zyn">

@@ -10,6 +10,9 @@ import UIKit
 
 class ChatViewController: UIViewController {
 
+    @IBOutlet weak var chatMessageTextField: UITextField!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -19,6 +22,11 @@ class ChatViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    
+    @IBAction func onSendTap(_ sender: Any) {
+        print ("chat sending")
     }
     
 
