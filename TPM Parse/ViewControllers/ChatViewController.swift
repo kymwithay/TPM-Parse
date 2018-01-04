@@ -25,7 +25,7 @@ class ChatViewController: UIViewController, UITableViewDataSource, UITableViewDe
         messagesTableView.dataSource = self
         messagesTableView.delegate = self
         
-        Timer.scheduledTimer(timeInterval: 5, target: self, selector: #selector(self.onTimer), userInfo: nil, repeats: true)
+        Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(self.onTimer), userInfo: nil, repeats: true)
     }
 
     override func didReceiveMemoryWarning() {
@@ -50,6 +50,22 @@ class ChatViewController: UIViewController, UITableViewDataSource, UITableViewDe
     @objc func onTimer() {
         // Add code to be run periodically
         print ("fetcning messages")
+        
+        let query = PFQuery(className: "Message")
+        query.whereKeyExists("text").includeKey("user")
+        query.order(byDescending: "createdAt")
+        
+        query.findObjectsInBackground { (objects: [PFObject]?, error: Error?) -> Void in
+            if error == nil {
+                // The find succeeded.
+                self.messages = objects
+                self.messagesTableView.reloadData()
+                
+            } else {
+                // Log details of the failure
+                print("Error: \(error?.localizedDescription)")
+            }
+        }
     }
     
     @IBAction func onSendTap(_ sender: Any) {

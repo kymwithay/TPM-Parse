@@ -115,13 +115,40 @@
                                 <rect key="frame" x="8" y="158" width="359" height="501"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ChatCell" id="Oyi-Fx-I6Z" customClass="ChatCell" customModule="TPM_Parse" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="359" height="44"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="chatCell" rowHeight="109" id="Oyi-Fx-I6Z" customClass="ChatCell" customModule="TPM_Parse" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="359" height="109"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Oyi-Fx-I6Z" id="AYu-j0-8r2">
-                                            <rect key="frame" x="0.0" y="0.0" width="359" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="359" height="108.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="User" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="35u-vt-QrD">
+                                                    <rect key="frame" x="8" y="8" width="36.5" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="suS-sB-jOd">
+                                                    <rect key="frame" x="8" y="37" width="42" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="35u-vt-QrD" firstAttribute="top" secondItem="AYu-j0-8r2" secondAttribute="top" constant="8" id="4Ze-wy-7Pe"/>
+                                                <constraint firstItem="suS-sB-jOd" firstAttribute="top" secondItem="35u-vt-QrD" secondAttribute="bottom" constant="8" id="XDH-GB-RHV"/>
+                                                <constraint firstItem="suS-sB-jOd" firstAttribute="leading" secondItem="AYu-j0-8r2" secondAttribute="leading" constant="8" id="kFf-fr-BOT"/>
+                                                <constraint firstItem="35u-vt-QrD" firstAttribute="leading" secondItem="AYu-j0-8r2" secondAttribute="leading" constant="8" id="neQ-vb-xR7"/>
+                                                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="35u-vt-QrD" secondAttribute="trailing" constant="8" id="nvF-Z4-MqJ"/>
+                                                <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="suS-sB-jOd" secondAttribute="bottom" constant="8" id="tDP-Ch-jh4"/>
+                                                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="suS-sB-jOd" secondAttribute="trailing" constant="8" id="uOI-8O-Yp0"/>
+                                            </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="messageLabel" destination="suS-sB-jOd" id="dcg-fo-lcN"/>
+                                            <outlet property="userLabel" destination="35u-vt-QrD" id="NfD-Wx-O7t"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
