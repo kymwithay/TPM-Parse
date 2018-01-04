@@ -25,6 +25,11 @@ class ChatViewController: UIViewController, UITableViewDataSource, UITableViewDe
         messagesTableView.dataSource = self
         messagesTableView.delegate = self
         
+        // Auto size row height based on cell autolayout constraints
+        messagesTableView.rowHeight = UITableViewAutomaticDimension
+        // Provide an estimated row height. Used for calculating scroll indicator
+        messagesTableView.estimatedRowHeight = 50
+        
         Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(self.onTimer), userInfo: nil, repeats: true)
     }
 
@@ -73,6 +78,7 @@ class ChatViewController: UIViewController, UITableViewDataSource, UITableViewDe
         
         let chatMessage = PFObject(className: "Message")
         chatMessage["text"] = chatMessageTextField.text ?? ""
+        chatMessage["user"] = PFUser.current()
         
         chatMessage.saveInBackground { (success, error) in
             if success {
