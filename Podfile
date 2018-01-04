@@ -6,6 +6,7 @@ target 'TPM Parse' do
   use_frameworks!
 
   # Pods for TPM Parse
+  pod 'AlamofireImage', '~> 3.3'
   pod 'Parse'
   post_install do |installer|
     installer.pods_project.targets.each do |target|

@@ -9,6 +9,7 @@
 import UIKit
 
 import Parse
+import AlamofireImage
 
 class ChatViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
@@ -39,7 +40,6 @@ class ChatViewController: UIViewController, UITableViewDataSource, UITableViewDe
         // remove the separator
         messagesTableView.separatorStyle = .none
         
-
         
         Timer.scheduledTimer(timeInterval: 3, target: self, selector: #selector(self.onTimer), userInfo: nil, repeats: true)
     }
@@ -75,8 +75,6 @@ class ChatViewController: UIViewController, UITableViewDataSource, UITableViewDe
         query.order(byDescending: "createdAt")
         
         query.findObjectsInBackground { (objects: [PFObject]?, error: Error?) -> Void in
-            print ("fetched")
-            
             if error == nil {
                 // The find succeeded.
                 self.messages = objects
