@@ -54,8 +54,6 @@ class ChatViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     @objc func onTimer() {
         // Add code to be run periodically
-        print ("fetcning messages")
-        
         let query = PFQuery(className: "Message")
         query.whereKeyExists("text").includeKey("user")
         query.order(byDescending: "createdAt")
@@ -68,7 +66,7 @@ class ChatViewController: UIViewController, UITableViewDataSource, UITableViewDe
                 
             } else {
                 // Log details of the failure
-                print("Error: \(error?.localizedDescription)")
+                print("Error: \(String(describing: error?.localizedDescription))")
             }
         }
     }

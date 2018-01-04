@@ -61,6 +61,11 @@
                                     <action selector="onTapLogIn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="pMd-He-cS2"/>
                                 </connections>
                             </button>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="pvR-R3-TPd">
+                                <rect key="frame" x="170" y="316" width="37" height="37"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="color" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -81,6 +86,7 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="activityIndicator" destination="pvR-R3-TPd" id="cSq-P6-EIu"/>
                         <outlet property="passwordTextField" destination="JF1-qE-yte" id="Xjb-DA-5i7"/>
                         <outlet property="usernameTextField" destination="wwu-A1-Xxt" id="fS3-xN-lf9"/>
                         <segue destination="Lpp-YI-1sT" kind="presentation" identifier="loginSegue" id="bDI-GY-x0g"/>

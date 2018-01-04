@@ -13,6 +13,7 @@ class LoginViewController: UIViewController {
     
     @IBOutlet weak var usernameTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -44,12 +45,20 @@ class LoginViewController: UIViewController {
                 })
                 
                 alertController.addAction(okAction)
+                
+                // stop activity indicator animation
+                self.activityIndicator.stopAnimating()
+                
                 // Show the errorString somewhere and let the user try again.
                 self.present(alertController, animated: true)
             } else {
                 // Hooray! Let them use the app now.
                 // create a segue
                 print ("signed up")
+                
+                // stop activity indicator animation
+                self.activityIndicator.stopAnimating()
+                
                 // login the user
                 self.performSegue(withIdentifier: "loginSegue", sender: nil)
             }
@@ -64,6 +73,10 @@ class LoginViewController: UIViewController {
                 print ("logged in")
                 // perform segue
                 print ("logged in")
+                
+                // stop activity indicator animation
+                self.activityIndicator.stopAnimating()
+                
                 // create a segue
                 self.performSegue(withIdentifier: "loginSegue", sender: nil)
             }
@@ -77,6 +90,10 @@ class LoginViewController: UIViewController {
                 })
                 
                 alertController.addAction(okAction)
+                
+                // stop activity indicator animation
+                self.activityIndicator.stopAnimating()
+                
                 // Show the errorString somewhere and let the user try again.
                 self.present(alertController, animated: true)
             }
@@ -109,7 +126,8 @@ class LoginViewController: UIViewController {
     
     
     @IBAction func onTapLogIn(_ sender: Any) {
-        print ("Tapped log in")
+        activityIndicator.startAnimating()
+        
         let username = usernameTextField.text! as String
         let password = passwordTextField.text! as String
         
