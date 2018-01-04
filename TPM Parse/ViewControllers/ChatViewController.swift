@@ -30,7 +30,14 @@ class ChatViewController: UIViewController, UITableViewDataSource, UITableViewDe
         // Provide an estimated row height. Used for calculating scroll indicator
         messagesTableView.estimatedRowHeight = 50
         
-        Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(self.onTimer), userInfo: nil, repeats: true)
+        // Initialize a UIRefreshControl
+        let refreshControl = UIRefreshControl()
+        refreshControl.addTarget(self, action: #selector(refreshControlAction(_:)), for: UIControlEvents.valueChanged)
+        // add refresh control to table view
+        messagesTableView.insertSubview(refreshControl, at: 0)
+
+        
+        Timer.scheduledTimer(timeInterval: 3, target: self, selector: #selector(self.onTimer), userInfo: nil, repeats: true)
     }
 
     override func didReceiveMemoryWarning() {
@@ -52,6 +59,11 @@ class ChatViewController: UIViewController, UITableViewDataSource, UITableViewDe
         return cell
     }
     
+    @objc func refreshControlAction(_ refreshControl: UIRefreshControl) {
+        onTimer()
+        refreshControl.endRefreshing()
+    }
+    
     @objc func onTimer() {
         // Add code to be run periodically
         let query = PFQuery(className: "Message")
@@ -59,6 +71,8 @@ class ChatViewController: UIViewController, UITableViewDataSource, UITableViewDe
         query.order(byDescending: "createdAt")
         
         query.findObjectsInBackground { (objects: [PFObject]?, error: Error?) -> Void in
+            print ("fetched")
+            
             if error == nil {
                 // The find succeeded.
                 self.messages = objects
