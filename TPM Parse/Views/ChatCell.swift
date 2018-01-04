@@ -14,6 +14,7 @@ class ChatCell: UITableViewCell {
     
     @IBOutlet weak var userLabel: UILabel!
     @IBOutlet weak var messageLabel: UILabel!
+    @IBOutlet weak var bubbleView: UIView!
     
     
     var messages: PFObject! {
@@ -34,6 +35,10 @@ class ChatCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        
+        // for bubbleView
+        bubbleView.layer.cornerRadius = 16
+        bubbleView.clipsToBounds = true
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
